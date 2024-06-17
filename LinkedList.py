@@ -169,3 +169,12 @@ class LinkedList:
     def sort_descending(self):
         self.sort_ascending()
         self.reverse()
+
+    # Returns no. of times an element is repeated
+    def count(self, element):
+        count = 0
+        for x in range(self.length()):
+            if self.element_at(x) == element:
+                count += 1
+
+        return count
