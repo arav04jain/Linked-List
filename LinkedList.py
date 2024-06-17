@@ -140,7 +140,32 @@ class LinkedList:
 
     # Merges 2 linked lists
     def extend(self, other_list):
-        end_element = self.__node_on_index(self.length() - 1)
-        end_element.next = other_list.head
+        self.__node_on_index(self.length() - 1).next = other_list.head
 
+    # Swaps on the basis of Index
+    def swap_index(self, index1, index2):
+        self.__node_on_index(index1).data, self.__node_on_index(index2).data = self.__node_on_index(
+            index2).data, self.__node_on_index(index1).data
 
+    # Swaps on the basis of data
+    def swap_element(self, element1, element2):
+        self.swap_index(self.get_index(element1), self.get_index(element2))
+
+    # Uses Selection Sort for sorting the table
+    def sort_ascending(self):
+        for x in range(self.length()):
+            current_min = x
+            for y in range(x, self.length()):
+                if self.element_at(y) < self.element_at(current_min):
+                    current_min = y
+            self.swap_index(current_min, x)
+
+    # Reverses the list
+    def reverse(self):
+        for x in range(self.length() // 2):
+            self.swap_index(x, self.length() - x - 1)
+
+    # Sorts the list in descending
+    def sort_descending(self):
+        self.sort_ascending()
+        self.reverse()
