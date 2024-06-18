@@ -7,8 +7,10 @@ class Node:
 class LinkedList:
 
     # self.head is the indicator to where the link list starts
-    def __init__(self):
+    def __init__(self, *kwargs):
         self.head = None
+        for element in kwargs:
+            self.append(element)
 
     # Prints the Linked List
     def print_list(self):
@@ -175,5 +177,3 @@ class LinkedList:
                 count += 1
 
         return count
-
-
