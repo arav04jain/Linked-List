@@ -4,7 +4,7 @@ class Node:
         self.next = None
 
 
-class LinkedList:
+class List:
 
     # self.head is the indicator to where the link list starts
     def __init__(self, *kwargs):
@@ -132,7 +132,7 @@ class LinkedList:
 
     # Copies the list into another
     def copy(self):
-        copy_list = LinkedList()
+        copy_list = List()
         for xx in range(self.length()):
             copy_list.append(self.element_at(xx))
 
@@ -177,3 +177,4 @@ class LinkedList:
                 count += 1
 
         return count
+
