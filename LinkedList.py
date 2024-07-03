@@ -34,6 +34,8 @@ class List:
             else:
                 pos += 1
 
+            current_node = current_node.next
+
     # Gives the Node on a particular index - Not to be used by the User
     def __node(self, index):
         if index + 1 <= self.length():
